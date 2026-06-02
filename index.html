@@ -139,6 +139,566 @@
   .pill {
     font-family: var(--mono);
     font-size: 11px;
+    color: var(--text-secondary);
+    padding: 4px 8px;
+    border: 1px solid var(--border-strong);
+    border-radius: 3px;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+
+  .cta-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .btn-primary {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 9px 18px;
+    background: var(--teal);
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: opacity 0.15s;
+  }
+
+  .btn-primary:hover { opacity: 0.8; }
+
+  .btn-secondary {
+    font-family: var(--mono);
+    font-size: 13px;
+    padding: 9px 18px;
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border-strong);
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.15s;
+  }
+
+  .btn-secondary:hover { background: var(--bg-muted); }
+
+  /* Sections */
+  section {
+    padding: 3.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Problem */
+  .problem-text {
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--text);
+    max-width: 580px;
+  }
+
+  .problem-text + .problem-text { margin-top: 1rem; }
+
+  .problem-text em {
+    font-style: normal;
+    color: var(--text-secondary);
+  }
+
+  /* Layers */
+  .layers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 1.5rem;
+  }
+
+  @media (max-width: 580px) {
+    .layers { grid-template-columns: 1fr; }
+    .layer { border-right: none; border-bottom: 1px solid var(--border); }
+    .layer:last-child { border-bottom: none; }
+  }
+
+  .layer {
+    background: var(--bg-card);
+    padding: 1.25rem 1.25rem 1.5rem;
+    border-right: 1px solid var(--border);
+  }
+
+  .layer:last-child { border-right: none; }
+
+  .layer-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-tertiary);
+    margin-bottom: 0.5rem;
+  }
+
+  .layer-name {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--teal);
+    margin-bottom: 0.5rem;
+  }
+
+  .layer-desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.55;
+  }
+
+  code {
+    font-family: var(--mono);
+    font-size: 12px;
+    background: var(--bg-muted);
+    padding: 1px 5px;
+    border-radius: 2px;
+    color: var(--text);
+  }
+
+  /* Agents */
+  .agents {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    .agents { grid-template-columns: 1fr; }
+  }
+
+  .agent {
+    background: var(--bg-card);
+    padding: 1.25rem;
+  }
+
+  .agent-name {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+  }
+
+  .agent-role {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.55;
+  }
+
+  /* Not list */
+  .not-list {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .not-item {
+    font-size: 14px;
+    color: var(--text-secondary);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+  }
+
+  .not-item:last-child { border-bottom: none; }
+
+  .not-item::before {
+    content: '—';
+    font-family: var(--mono);
+    color: var(--text-tertiary);
+    flex-shrink: 0;
+    font-size: 12px;
+  }
+
+  /* Reference implementation */
+  .ref-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+
+  .ref-icon {
+    font-family: var(--mono);
+    font-size: 20px;
+    color: var(--text-tertiary);
+    flex-shrink: 0;
+    line-height: 1;
+    margin-top: 2px;
+  }
+
+  .ref-name {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+  }
+
+  .ref-desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+
+  .ref-link {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border-strong);
+    padding-bottom: 1px;
+  }
+
+  .ref-link:hover { color: var(--text); }
+
+  /* Footer */
+  footer {
+    padding: 2rem 0 3rem;
+  }
+
+  .footer-inner {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-tertiary);
+    text-decoration: none;
+  }
+
+  .footer-links a:hover { color: var(--text-secondary); }
+
+  .footer-copy {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--teal);
+  }
+
+  /* GitHub icon SVG inline */
+  .gh-icon {
+    width: 16px;
+    height: 16px;
+    vertical-align: -2px;
+    fill: currentColor;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="inner">
+      <a href="/" class="nav-logo">fieldworks.build</a>
+      <ul class="nav-links">
+        <li><a href="https://github.com/smslavin/waterworks-ai">demo</a></li>
+        <li><a href="#">spec</a></li>
+        <li><a href="#">substack</a></li>
+        <li><a href="https://github.com/smslavin">github</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="container">
+
+    <div class="hero">
+      <div class="hero-badge">open source · v0.1</div>
+      <h1>FieldWorks</h1>
+      <p class="hero-tagline">An open, MCP-native industrial AI framework. Protocol-first, multi-agent, designed to run fully on-premises in air-gapped environments.</p>
+      <div class="hero-pills">
+        <span class="pill">composable</span>
+        <span class="pill">MCP-native</span>
+        <span class="pill">air-gap ready</span>
+        <span class="pill">OT security model</span>
+        <span class="pill">on-premises</span>
+      </div>
+      <div class="cta-row">
+        <a href="https://github.com/smslavin" class="btn-primary">
+          <svg class="gh-icon" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          View on GitHub
+        </a>
+        <a href="https://github.com/smslavin/waterworks-ai" class="btn-secondary">See it running →</a>
+      </div>
+    </div>
+
+    <section>
+      <div class="section-label">The problem</div>
+      <p class="problem-text">The barrier isn't connectivity. The data is accessible. <em>The barrier is fluency.</em> You need to know which tag to query, which historian to open, which dashboard to read. You need to know the plant.</p>
+      <p class="problem-text">FieldWorks removes that barrier — not by replacing the systems that already work, but by putting a natural language interface on top of them. The same way a web browser didn't replace the control system but made its value accessible to anyone with a network connection, FieldWorks makes plant intelligence accessible to anyone who can ask a question.</p>
+      <p class="problem-text" style="margin-top: 1rem; font-size: 15px; color: var(--text-secondary);">The interface is a chat window. The intelligence is the plant.</p>
+    </section>
+
+    <section>
+      <div class="section-label">Three layers</div>
+      <div class="layers">
+        <div class="layer">
+          <div class="layer-num">01</div>
+          <div class="layer-name">Protocol</div>
+          <div class="layer-desc">Conformant MCP servers — one per industrial protocol. MQTT, OPC-UA, Modbus, DNP3, EtherNet/IP, AVEVA. The AI never knows what protocol is underneath. Swap the adapter, nothing else changes.</div>
+        </div>
+        <div class="layer">
+          <div class="layer-num">02</div>
+          <div class="layer-name">Plant</div>
+          <div class="layer-desc">One <code>topology.yaml</code> describes the facility. Equipment types, instances, attributes, fault modes, write permissions. Change the config, change the plant. The framework code does not change.</div>
+        </div>
+        <div class="layer">
+          <div class="layer-num">03</div>
+          <div class="layer-name">Agent</div>
+          <div class="layer-desc">Where reasoning happens. Cascade orchestrates. Specialists diagnose. Deadband validates. Millwright executes. Every step logged to an append-only audit trail.</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-label">The agents</div>
+      <div class="agents">
+        <div class="agent">
+          <div class="agent-name" style="color: var(--teal)">Cascade</div>
+          <div class="agent-role">Orchestrates. Receives queries, loads plant context from <code>topology.yaml</code>, dispatches specialists, synthesizes findings. Never touches raw data directly. Knows the plant as a whole.</div>
+        </div>
+        <div class="agent">
+          <div class="agent-name" style="color: var(--teal)">Specialist</div>
+          <div class="agent-role">Diagnoses. One per process area — intake, treatment, distribution. Defined by configuration, not hardcoded. Knows their process area in depth.</div>
+        </div>
+        <div class="agent">
+          <div class="agent-name" style="color: var(--purple)">Deadband</div>
+          <div class="agent-role">Validates. Noise or signal? Checks duration, trend direction, and confidence threshold against raw data before anything moves to the action path.</div>
+        </div>
+        <div class="agent">
+          <div class="agent-name" style="color: var(--purple)">Millwright</div>
+          <div class="agent-role">Executes. Write access only, operator approval required. Ramps instead of steps. Confirms outcome. Documents everything. Called when things get serious.</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-label">What it isn't</div>
+      <div class="not-list">
+        <div class="not-item">A cloud service</div>
+        <div class="not-item">A proprietary platform</div>
+        <div class="not-item">A replacement for your control system</div>
+        <div class="not-item">A point solution for a specific vendor or protocol</div>
+        <div class="not-item">Autonomous — the operator is always in the loop until they decide, consciously and deliberately, to widen it</div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-label">Reference implementation</div>
+      <div class="ref-card">
+        <div class="ref-icon">◎</div>
+        <div>
+          <div class="ref-name">waterworks-ai</div>
+          <div class="ref-desc">A complete industrial AI diagnostic stack built on FieldWorks. Water treatment plant scenario with fault injection, Grafana dashboards with cross-dashboard annotations, deep reasoning toggle, audit log, and AI metrics telemetry alongside process data. Running on MQTT, OPC-UA, InfluxDB, MCP, and Claude.</div>
+          <a href="https://github.com/smslavin/waterworks-ai" class="ref-link">github.com/smslavin/waterworks-ai</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="https://github.com/smslavin">GitHub</a>
+        <a href="#">Specification</a>
+        <a href="#">Substack</a>
+      </div>
+      <div class="footer-copy">fieldworks.build</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FieldWorks — Open Source Industrial AI Framework</title>
+<meta name="description" content="Composable, open, MCP-native. Protocol-first, multi-agent, designed to run fully on-premises in air-gapped environments.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #363432;
+    --bg-card: #403e3c;
+    --bg-muted: #484644;
+    --text: #f0ede8;
+    --text-secondary: #a09d98;
+    --text-tertiary: #6b6860;
+    --border: rgba(240,237,232,0.1);
+    --border-strong: rgba(240,237,232,0.2);
+    --teal: #00a0b0;
+    --teal-bg: #0d2f33;
+    --purple: #c060be;
+    --purple-bg: #2a1229;
+    --green: #4a9e6a;
+    --green-bg: #0f2318;
+    --mono: 'IBM Plex Mono', monospace;
+    --sans: 'IBM Plex Sans', sans-serif;
+  }
+
+  html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  nav {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  nav .inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--teal);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-family: var(--mono);
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  /* Hero */
+  .hero {
+    padding: 5rem 0 4rem;
+    border-bottom: 2px solid var(--teal);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--green);
+    background: var(--green-bg);
+    padding: 4px 10px;
+    border-radius: 3px;
+    margin-bottom: 2rem;
+    letter-spacing: 0.04em;
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    display: inline-block;
+  }
+
+  h1 {
+    font-family: var(--mono);
+    font-size: clamp(40px, 8vw, 64px);
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    color: var(--purple);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-tagline {
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    max-width: 520px;
+    margin-bottom: 2rem;
+  }
+
+  .hero-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 2.5rem;
+  }
+
+  .pill {
+    font-family: var(--mono);
+    font-size: 11px;
     color: var(--text-tertiary);
     padding: 5px 10px;
     border: 1px solid var(--border);
