@@ -22,6 +22,10 @@
     --border-strong: rgba(26,25,23,0.22);
     --accent: #1a1917;
     --accent-light: #f0ede8;
+    --teal: #00a0b0;
+    --teal-bg: #e6f5f7;
+    --purple: #a1449f;
+    --purple-bg: #f5eaf5;
     --green: #2d5a3d;
     --green-bg: #e8f0eb;
     --mono: 'IBM Plex Mono', monospace;
@@ -40,6 +44,10 @@
       --border-strong: rgba(240,237,232,0.2);
       --accent: #f0ede8;
       --accent-light: #252422;
+      --teal: #00a0b0;
+      --teal-bg: #0d2f33;
+      --purple: #c060be;
+      --purple-bg: #2a1229;
       --green: #7abf8e;
       --green-bg: #1a2e20;
     }
@@ -76,7 +84,7 @@
     font-family: var(--mono);
     font-size: 14px;
     font-weight: 500;
-    color: var(--text);
+    color: var(--teal);
     text-decoration: none;
     letter-spacing: -0.01em;
   }
@@ -99,7 +107,7 @@
   /* Hero */
   .hero {
     padding: 5rem 0 4rem;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 2px solid var(--teal);
   }
 
   .hero-badge {
@@ -131,7 +139,7 @@
     font-weight: 500;
     letter-spacing: -0.03em;
     line-height: 1;
-    color: var(--text);
+    color: var(--purple);
     margin-bottom: 1.5rem;
   }
 
@@ -173,8 +181,8 @@
     font-size: 13px;
     font-weight: 500;
     padding: 9px 18px;
-    background: var(--text);
-    color: var(--bg);
+    background: var(--teal);
+    color: #ffffff;
     border: none;
     border-radius: 3px;
     cursor: pointer;
@@ -271,7 +279,7 @@
     font-family: var(--mono);
     font-size: 14px;
     font-weight: 500;
-    color: var(--text);
+    color: var(--teal);
     margin-bottom: 0.5rem;
   }
 
@@ -431,7 +439,7 @@
   .footer-copy {
     font-family: var(--mono);
     font-size: 12px;
-    color: var(--text-tertiary);
+    color: var(--teal);
   }
 
   /* GitHub icon SVG inline */
@@ -451,8 +459,8 @@
       <a href="/" class="nav-logo">fieldworks.build</a>
       <ul class="nav-links">
         <li><a href="https://github.com/smslavin/waterworks-ai">demo</a></li>
-        <li><a href="#">spec - coming soon</a></li>
-        <li><a href="https://seanslavin.substack.com/">substack</a></li>
+        <li><a href="#">spec</a></li>
+        <li><a href="#">substack</a></li>
         <li><a href="https://github.com/smslavin">github</a></li>
       </ul>
     </div>
@@ -515,19 +523,19 @@
       <div class="section-label">The agents</div>
       <div class="agents">
         <div class="agent">
-          <div class="agent-name">Cascade</div>
+          <div class="agent-name" style="color: var(--teal)">Cascade</div>
           <div class="agent-role">Orchestrates. Receives queries, loads plant context from <code>topology.yaml</code>, dispatches specialists, synthesizes findings. Never touches raw data directly. Knows the plant as a whole.</div>
         </div>
         <div class="agent">
-          <div class="agent-name">Specialist</div>
+          <div class="agent-name" style="color: var(--teal)">Specialist</div>
           <div class="agent-role">Diagnoses. One per process area — intake, treatment, distribution. Defined by configuration, not hardcoded. Knows their process area in depth.</div>
         </div>
         <div class="agent">
-          <div class="agent-name">Deadband</div>
+          <div class="agent-name" style="color: var(--purple)">Deadband</div>
           <div class="agent-role">Validates. Noise or signal? Checks duration, trend direction, and confidence threshold against raw data before anything moves to the action path.</div>
         </div>
         <div class="agent">
-          <div class="agent-name">Millwright</div>
+          <div class="agent-name" style="color: var(--purple)">Millwright</div>
           <div class="agent-role">Executes. Write access only, operator approval required. Ramps instead of steps. Confirms outcome. Documents everything. Called when things get serious.</div>
         </div>
       </div>
@@ -564,8 +572,8 @@
     <div class="footer-inner">
       <div class="footer-links">
         <a href="https://github.com/smslavin">GitHub</a>
-        <a href="#">Specification - Coming Soon</a>
-        <a href="https://seanslavin.substack.com/">Substack</a>
+        <a href="#">Specification</a>
+        <a href="#">Substack</a>
       </div>
       <div class="footer-copy">fieldworks.build</div>
     </div>
